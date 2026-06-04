@@ -26,13 +26,13 @@ async def mail_ru(callback: CallbackQuery):
 async def edit_mail_ru(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer(text=EDIT_MAIL_RU_MESSAGE)
     await callback.answer()
-    state.set_state(MailRuEdit.state)
+    await state.set_state(MailRuEdit.state)
 
 @router.callback_query(F.data == CallbackData.edit_password(CallbackData.mail_ru))
 async def edit_mail_ru_password(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer(text=EDIT_MAIL_RU_PASSWORD_MESSAGE)
     await callback.answer()
-    state.set_state(MailRuPasswordEdit.state)
+    await state.set_state(MailRuPasswordEdit.state)
 
 @router.message(MailRuEdit.state)
 async def mail_ru_email_input(message: Message):
@@ -56,14 +56,14 @@ async def gmail_com(callback: CallbackQuery):
 async def edit_gmail_com(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer(text=EDIT_GMAIL_COM_MESSAGE)
     await callback.answer()
-    state.set_state(GmailComEdit.state)
+    await state.set_state(GmailComEdit.state)
     
 
 @router.callback_query(F.data == CallbackData.edit_password(CallbackData.gmail_com))
 async def edit_gmail_com_password(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer(text=EDIT_GMAIL_COM_PASSWORD_MESSAGE)
     await callback.answer()
-    state.set_state(GmailComPasswordEdit.state)
+    await state.set_state(GmailComPasswordEdit.state)
 
 @router.message(GmailComEdit.state)
 async def gmail_com_email_input(message: Message):
@@ -76,3 +76,5 @@ async def gmail_com_password_input(message: Message):
     await message.answer(text=SUCCESSFUL_GMAIL_COM_PASSWORD_EDIT)
 
 #TODO подумать над обобщением методов - их как-то очень много и они подозрительно похожи
+# Стоит также подумать над проверкой того, что ввод от пользователя действительно является почтой или паролем, а не чем-то случайным.
+# Если добавлю reply кнопки - надо добавить мидлварь, который будет проверять, что при ожидании ввода от пользователя не был прислан текст ReplyButton

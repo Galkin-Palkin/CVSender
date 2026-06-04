@@ -23,7 +23,7 @@ TITLES_MENU = "Выберите шаблон заголовка письма и�
 def CERTAIN_TITLE_MENU(title: str):
     return f"Текущий шаблон заголовка письма:\n{title}\nВыберите действия:"
 
-EMAIL_MENU = "s"
+EMAIL_MENU = "Выберите, какую почту хотите настроить:"
 
 MAIL_RU_BUTTON = "Mail.ru"
 
@@ -33,30 +33,30 @@ EDIT_EMAIL_BUTTON = "Редактировать почту"
 
 EDIT_PASSWORD_BUTTON = "Редактировать пароль"
 
-MAIL_RU_MENU = "s"
+MAIL_RU_MENU = "Настройка почты Mail.ru"
 
-GMAIL_COM_MENU = "s"
+GMAIL_COM_MENU = "Настройка почты Gmail.com"
 
-EDIT_GMAIL_COM_MESSAGE = "s"
+EDIT_GMAIL_COM_MESSAGE = "Введите новый адрес электронной почты для Gmail.com:"
 
-EDIT_GMAIL_COM_PASSWORD_MESSAGE = "s"
+EDIT_GMAIL_COM_PASSWORD_MESSAGE = "Введите новый пароль для Gmail.com:"
 
-EDIT_MAIL_RU_MESSAGE = "s"
+EDIT_MAIL_RU_MESSAGE = "Введите новый адрес электронной почты для Mail.ru:"
 
-EDIT_MAIL_RU_PASSWORD_MESSAGE = "s"
+EDIT_MAIL_RU_PASSWORD_MESSAGE = "Введите новый пароль для Mail.ru:"
 
-SUCCESSFUL_MAIL_RU_EDIT = "s"
+SUCCESSFUL_MAIL_RU_EDIT = "Почта Mail.ru успешно изменена!"
 
-UNSUCCESSFUL_MAIL_RU_EDIT = "s"
+UNSUCCESSFUL_MAIL_RU_EDIT = "Ошибка: изменение почты Mail.ru не удалось. Пожалуйста, попробуйте снова."
 
-SUCCESSFUL_MAIL_RU_PASSWORD_EDIT = "s"
+SUCCESSFUL_MAIL_RU_PASSWORD_EDIT = "Пароль для Mail.ru успешно изменен!"
 
-UNSUCCESSFUL_MAIL_RU_PASSWORD_EDIT = "s"
+UNSUCCESSFUL_MAIL_RU_PASSWORD_EDIT = "Ошибка: изменение пароля для Mail.ru не удалось. Пожалуйста, попробуйте снова."
 
-SUCCESSFUL_GMAIL_COM_EDIT = "s"
+SUCCESSFUL_GMAIL_COM_EDIT = "Почта Gmail.com успешно изменена!"
 
-UNSUCCESSFUL_GMAIL_COM_EDIT = "s"
+UNSUCCESSFUL_GMAIL_COM_EDIT = "Ошибка: изменение почты Gmail.com не удалось. Пожалуйста, попробуйте снова."
 
-SUCCESSFUL_GMAIL_COM_PASSWORD_EDIT = "s"
+SUCCESSFUL_GMAIL_COM_PASSWORD_EDIT = "Пароль для Gmail.com успешно изменен!"
 
-UNSUCCESSFUL_GMAIL_COM_PASSWORD_EDIT = "s"
+UNSUCCESSFUL_GMAIL_COM_PASSWORD_EDIT = "Ошибка: изменение пароля для Gmail.com не удалось. Пожалуйста, попробуйте снова."

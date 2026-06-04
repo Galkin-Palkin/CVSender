@@ -40,5 +40,3 @@ def get_files(filenames: Sequence[str]) -> Sequence[File]:
                 )
             )
     return files_bytes
-
-print(get_cv_filenames())
