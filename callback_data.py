@@ -1,7 +1,4 @@
 class CallbackData:
-    def extract_id(callback_data: str) -> str:
-        return callback_data.split(':')[-1]
-    
     cv_letters = "cv_letters"
 
     cv_titles = "cv_titles"
@@ -11,28 +8,32 @@ class CallbackData:
     email_send = "email_send"
 
     letter_prefix = "letter:"
-    def letter(letter_id):
+    def letter(letter_id: str):
         return f"{CallbackData.letter_prefix}{letter_id}"
     
     edit_letter_prefix = "edit_letter:"
-    def edit_letter(letter_id):
+    def edit_letter(letter_id: str):
         return f"{CallbackData.edit_letter_prefix}{letter_id}"
     
     delete_letter_prefix = "delete_letter:"
-    def delete_letter(letter_id):
+    def delete_letter(letter_id: str):
         return f"{CallbackData.delete_letter_prefix}{letter_id}"
     
     title_prefix = "title:"
-    def title(title_id):
+    def title(title_id: str):
         return f"{CallbackData.title_prefix}{title_id}"
     
     edit_title_prefix = "edit_title:"
-    def edit_title(title_id):
+    def edit_title(title_id: str):
         return f"{CallbackData.edit_title_prefix}{title_id}"
     
     delete_title_prefix = "delete_title:"
-    def delete_title(title_id):
+    def delete_title(title_id: str):
         return f"{CallbackData.delete_title_prefix}{title_id}"
+    
+    email_menu_prefix = "email:"
+    def email_menu(email: str) -> str:
+        return f"{CallbackData.email_menu_prefix}{email}"
     
     mail_ru = "mail_ru"
 

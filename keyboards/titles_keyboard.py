@@ -1,8 +1,20 @@
-from aiogram.types import InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-def title_keyboard():
+from callback_data import CallbackData
+from entity.title import Title
+from strings import DELETE_TITLE_BUTTON, EDIT_TITLE_BUTTON
+
+def titles_keyboard(titles: list[Title]) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            []
+            [InlineKeyboardButton(text=title.title, callback_data=CallbackData.title(title.id))] for title in titles
+        ]
+    )
+
+def title_menu_keyboard(title: Title) -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text=EDIT_TITLE_BUTTON, callback_data=CallbackData.edit_title(title.id))],
+            [InlineKeyboardButton(text=DELETE_TITLE_BUTTON, callback_data=CallbackData.delete_title(title.id))]
         ]
     )

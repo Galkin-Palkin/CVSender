@@ -12,3 +12,6 @@ ALLOWED_USER_ID = os.getenv("ALLOWED_USER_ID")
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 STORAGE_DIR = os.path.join(ROOT_DIR, CV_STORAGE_PATH)
+
+LETTER_ID = "letter_id"
+TITLE_ID = "title_id"

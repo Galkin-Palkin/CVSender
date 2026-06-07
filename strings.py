@@ -18,10 +18,34 @@ LETTERS_MENU = "Выберите шаблон письма или создайт
 def CERTAIN_LETTER_MENU(letter: str):
     return f"Текущий шаблон письма:\n{letter}\nВыберите действия:"
 
+EDIT_LETTER_BUTTON = "Изменить шаблон письма"
+
+DELETE_LETTER_BUTTON = "Удалить шаблон письма"
+
+EDIT_LETTER_MESSAGE = "Введите новый текст шаблона письма:"
+
+SUCCESSFUL_LETTER_EDIT_MESSAGE = "Шаблон письма успешно изменен!"
+
+UNSUCCESSFUL_LETTER_EDIT_MESSAGE = "Ошибка: изменение шаблона письма не удалось. Пожалуйста, попробуйте снова."
+
+LETTER_DELETED_SUCCESSFULLY = "Шаблон письма успешно удален!"
+
 TITLES_MENU = "Выберите шаблон заголовка письма или создайте новый"
 
-def CERTAIN_TITLE_MENU(title: str):
+def CERTAIN_TITLE_MENU(title: str = "<заголовок не выбран>"):
     return f"Текущий шаблон заголовка письма:\n{title}\nВыберите действия:"
+
+EDIT_TITLE_BUTTON = "Изменить шаблон заголовка письма"
+
+DELETE_TITLE_BUTTON = "Удалить шаблон заголовка письма"
+
+EDIT_TITLE_MESSAGE = "Введите новый текст шаблона заголовка:"
+
+SUCCESSFUL_TITLE_EDIT_MESSAGE = "Шаблон заголовка письма успешно изменен!"
+
+UNSUCCESSFUL_TITLE_EDIT_MESSAGE = "Ошибка: изменение шаблона заголовка письма не удалось. Пожалуйста, попробуйте снова."
+
+TITLE_DELETED_SUCCESSFULLY = "Шаблон заголовка письма успешно удален!"
 
 EMAIL_MENU = "Выберите, какую почту хотите настроить:"
 

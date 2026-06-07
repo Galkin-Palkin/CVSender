@@ -11,3 +11,9 @@ class MailRuEdit(StatesGroup):
 
 class MailRuPasswordEdit(StatesGroup):
     state = State()
+
+class LetterEdit(StatesGroup):
+    state = State()
+
+class TitleEdit(StatesGroup):
+    state = State()
