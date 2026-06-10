@@ -7,10 +7,12 @@ from constants import LETTER_ID
 from database import dummy_data
 from keyboards.letters_keyboard import letter_menu_keyboard, letters_menu_keyboard
 from states import LetterEdit
-from strings import CERTAIN_LETTER_MENU, EDIT_LETTER_MESSAGE, LETTER_DELETED_SUCCESSFULLY, LETTERS_MENU, SUCCESSFUL_LETTER_EDIT_MESSAGE
+from strings import CERTAIN_LETTER_MENU, EDIT_LETTER_PATTERN_MESSAGE, LETTER_PATTERN_DELETED_SUCCESSFULLY, LETTERS_MENU, SUCCESSFUL_LETTER_PATTERN_EDIT_MESSAGE
 from utils.id_helper import IdHelper
 
 router = Router()
+
+#TODO добавить ввод названия шаблона письма
 
 @router.callback_query(F.data == CallbackData.cv_letters)
 async def letters_menu(callback: CallbackQuery):
@@ -27,21 +29,21 @@ async def certain_letter_menu(callback: CallbackQuery, state: FSMContext):
 @router.callback_query(F.data.startswith(CallbackData.edit_letter_prefix))
 async def edit_letter(callback: CallbackQuery, state: FSMContext):
     letter_id = await IdHelper.add_id_to_state(callback.data, state, LETTER_ID)
-    await callback.message.answer(text=EDIT_LETTER_MESSAGE)
+    await callback.message.answer(text=EDIT_LETTER_PATTERN_MESSAGE)
     await callback.answer()
     await state.set_state(LetterEdit.state)
 
 @router.callback_query(F.data.startswith(CallbackData.delete_letter_prefix))
 async def delete_letter(callback: CallbackQuery, state: FSMContext):
     letter_id = await IdHelper.add_id_to_state(callback.data, state, LETTER_ID)
-    await callback.message.answer(text=LETTER_DELETED_SUCCESSFULLY)
+    await callback.message.answer(text=LETTER_PATTERN_DELETED_SUCCESSFULLY)
     await callback.answer()
 
 @router.message(LetterEdit.state & ~F.command)
 async def letter_input(message: Message, state: FSMContext):
     letter_id = await IdHelper.get_id_from_state(state, LETTER_ID)
     new_title = message.text
-    await message.answer(text=SUCCESSFUL_LETTER_EDIT_MESSAGE)
+    await message.answer(text=SUCCESSFUL_LETTER_PATTERN_EDIT_MESSAGE)
     await state.clear_state()
 
 @router.callback_query(F.data == "")

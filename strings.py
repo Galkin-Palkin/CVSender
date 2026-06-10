@@ -18,69 +18,49 @@ LETTERS_MENU = "Выберите шаблон письма или создайт
 def CERTAIN_LETTER_MENU(letter: str):
     return f"Текущий шаблон письма:\n{letter}\nВыберите действия:"
 
-EDIT_LETTER_BUTTON = "Изменить шаблон письма"
+EDIT_LETTER_PATTERN_BUTTON = "Изменить шаблон письма"
 
-DELETE_LETTER_BUTTON = "Удалить шаблон письма"
+DELETE_LETTER_PATTERN_BUTTON = "Удалить шаблон письма"
 
-EDIT_LETTER_MESSAGE = "Введите новый текст шаблона письма:"
+EDIT_LETTER_PATTERN_MESSAGE = "Введите новый текст шаблона письма:"
 
-SUCCESSFUL_LETTER_EDIT_MESSAGE = "Шаблон письма успешно изменен!"
+SUCCESSFUL_LETTER_PATTERN_EDIT_MESSAGE = "Шаблон письма успешно изменен!"
 
-UNSUCCESSFUL_LETTER_EDIT_MESSAGE = "Ошибка: изменение шаблона письма не удалось. Пожалуйста, попробуйте снова."
+UNSUCCESSFUL_LETTER_PATTERN_EDIT_MESSAGE = "Ошибка: изменение шаблона письма не удалось. Пожалуйста, попробуйте снова."
 
-LETTER_DELETED_SUCCESSFULLY = "Шаблон письма успешно удален!"
+LETTER_PATTERN_DELETED_SUCCESSFULLY = "Шаблон письма успешно удален!"
 
 TITLES_MENU = "Выберите шаблон заголовка письма или создайте новый"
 
 def CERTAIN_TITLE_MENU(title: str = "<заголовок не выбран>"):
     return f"Текущий шаблон заголовка письма:\n{title}\nВыберите действия:"
 
-EDIT_TITLE_BUTTON = "Изменить шаблон заголовка письма"
+EDIT_TITLE_PATTERN_BUTTON = "Изменить шаблон заголовка письма"
 
-DELETE_TITLE_BUTTON = "Удалить шаблон заголовка письма"
+DELETE_TITLE_PATTERN_BUTTON = "Удалить шаблон заголовка письма"
 
-EDIT_TITLE_MESSAGE = "Введите новый текст шаблона заголовка:"
+EDIT_TITLE_PATTERN_MESSAGE = "Введите новый текст шаблона заголовка:"
 
-SUCCESSFUL_TITLE_EDIT_MESSAGE = "Шаблон заголовка письма успешно изменен!"
+SUCCESSFUL_TITLE_PATTERN_EDIT_MESSAGE = "Шаблон заголовка письма успешно изменен!"
 
-UNSUCCESSFUL_TITLE_EDIT_MESSAGE = "Ошибка: изменение шаблона заголовка письма не удалось. Пожалуйста, попробуйте снова."
+UNSUCCESSFUL_TITLE_PATTERN_EDIT_MESSAGE = "Ошибка: изменение шаблона заголовка письма не удалось. Пожалуйста, попробуйте снова."
 
-TITLE_DELETED_SUCCESSFULLY = "Шаблон заголовка письма успешно удален!"
+TITLE_PATTERN_DELETED_SUCCESSFULLY = "Шаблон заголовка письма успешно удален!"
 
-EMAIL_MENU = "Выберите, какую почту хотите настроить:"
+EDIT_FILES_BUTTON = "Редактировать файлы резюме"
 
-MAIL_RU_BUTTON = "Mail.ru"
+EDIT_TITLE_BUTTON = "Редактировать заголовок письма"
 
-GMAIL_COM_BUTTON = "Gmail.com"
+EDIT_LETTER_BUTTON = "Редактировать письмо"
 
-EDIT_EMAIL_BUTTON = "Редактировать почту"
+EDIT_EMAILS_TO_SEND_BUTTON = "Редактировать адреса электронной почты для отправки"
 
-EDIT_PASSWORD_BUTTON = "Редактировать пароль"
+EMAIL_SEND_MENU = "Выберите, что вы хотите отредактировать, или отправьте резюме работодателю:"
 
-MAIL_RU_MENU = "Настройка почты Mail.ru"
+EDIT_FILES_MENU = "Выберите файлы, которые хотите отправить"
 
-GMAIL_COM_MENU = "Настройка почты Gmail.com"
+def FILE_SELECTED(filename: str) -> str:
+    return f"✅ {filename}"
 
-EDIT_GMAIL_COM_MESSAGE = "Введите новый адрес электронной почты для Gmail.com:"
-
-EDIT_GMAIL_COM_PASSWORD_MESSAGE = "Введите новый пароль для Gmail.com:"
-
-EDIT_MAIL_RU_MESSAGE = "Введите новый адрес электронной почты для Mail.ru:"
-
-EDIT_MAIL_RU_PASSWORD_MESSAGE = "Введите новый пароль для Mail.ru:"
-
-SUCCESSFUL_MAIL_RU_EDIT = "Почта Mail.ru успешно изменена!"
-
-UNSUCCESSFUL_MAIL_RU_EDIT = "Ошибка: изменение почты Mail.ru не удалось. Пожалуйста, попробуйте снова."
-
-SUCCESSFUL_MAIL_RU_PASSWORD_EDIT = "Пароль для Mail.ru успешно изменен!"
-
-UNSUCCESSFUL_MAIL_RU_PASSWORD_EDIT = "Ошибка: изменение пароля для Mail.ru не удалось. Пожалуйста, попробуйте снова."
-
-SUCCESSFUL_GMAIL_COM_EDIT = "Почта Gmail.com успешно изменена!"
-
-UNSUCCESSFUL_GMAIL_COM_EDIT = "Ошибка: изменение почты Gmail.com не удалось. Пожалуйста, попробуйте снова."
-
-SUCCESSFUL_GMAIL_COM_PASSWORD_EDIT = "Пароль для Gmail.com успешно изменен!"
-
-UNSUCCESSFUL_GMAIL_COM_PASSWORD_EDIT = "Ошибка: изменение пароля для Gmail.com не удалось. Пожалуйста, попробуйте снова."
+def FILE_NOT_SELECTED(filename: str) -> str:
+    return filename
