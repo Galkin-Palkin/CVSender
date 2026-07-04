@@ -50,3 +50,9 @@ class CallbackData:
     file_unselected_prefix = "file_unselected:"
     def file_unselected(file_id: str):
         return f"{CallbackData.file_unselected_prefix}{file_id}"
+    
+    create_new_letter = "create_new_letter"
+
+    edit_letter_name_prefix = "edit_letter_name:"
+    def edit_letter_name(letter_id):
+        return f"{CallbackData.edit_letter_name_prefix}{letter_id}"

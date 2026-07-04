@@ -29,9 +29,8 @@ class DatabaseV1:
                                 property_name VARCHAR(64),
                                 property_value VARCHAR(128)
                             )""")
-        cursor.execute("""INSERT INTO Settings (property_name, property_value) VALUES ("database_version", "1")""")
+        cursor.execute("""INSERT OR IGNORE INTO Settings (property_name, property_value) VALUES ("database_version", "1")""")
         self.connection.commit()
-        self.connection.close()
     
-    def __del__(self):
+    def close(self):
         self.connection.close()

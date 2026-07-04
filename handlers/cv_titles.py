@@ -9,7 +9,7 @@ from keyboards.letters_keyboard import letter_menu_keyboard, letters_menu_keyboa
 from keyboards.titles_keyboard import title_menu_keyboard
 from states import TitleEdit
 from strings import CERTAIN_TITLE_MENU, EDIT_TITLE_PATTERN_MESSAGE, SUCCESSFUL_TITLE_PATTERN_EDIT_MESSAGE, TITLE_PATTERN_DELETED_SUCCESSFULLY, TITLES_MENU
-from utils.id_helper import IdHelper
+from utils.id_helper import StateHelper
 
 router = Router()
 
@@ -20,25 +20,25 @@ async def titles_menu(callback: CallbackQuery):
 
 @router.callback_query(F.data.startswith(CallbackData.title_prefix))
 async def certain_title_menu(callback: CallbackQuery, state: FSMContext):
-    title_id = await IdHelper.add_id_to_state(callback.data, state, TITLE_ID)
+    title_id = await StateHelper.add_id_to_state(callback.data, state, TITLE_ID)
     await callback.message.answer(text=CERTAIN_TITLE_MENU(), reply_markup=letter_menu_keyboard())
     await callback.answer()
     
 # Присылать моноширинный текст письма, чтобы его можно было скопировать и вставить
 @router.callback_query(F.data.startswith(CallbackData.edit_title_prefix))
 async def edit_title(callback: CallbackQuery, state: FSMContext):
-    title_id = await IdHelper.add_id_to_state(callback.data, state, TITLE_ID)
+    title_id = await StateHelper.add_id_to_state(callback.data, state, TITLE_ID)
     await callback.message.answer(text=EDIT_TITLE_PATTERN_MESSAGE)
     await callback.answer()
     await state.set_state(TitleEdit.state)
 
 @router.callback_query(F.data.startswith(CallbackData.delete_title_prefix))
 async def delete_title(callback: CallbackQuery, state: FSMContext):
-    title_id = await IdHelper.add_id_to_state(callback.data, state, TITLE_ID)
+    title_id = await StateHelper.add_id_to_state(callback.data, state, TITLE_ID)
     await callback.message.answer(text=TITLE_PATTERN_DELETED_SUCCESSFULLY)
     await callback.answer()
 
-@router.message(TitleEdit.state & ~F.command)
+@router.message(TitleEdit.state, ~F.text.startswith("/"))
 async def title_input(message: Message, state: FSMContext):
     data = await state.get_data()
     title_id = data.get(TITLE_ID)

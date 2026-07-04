@@ -30,4 +30,9 @@ class LetterRepository:
             name=name,
             text=text
         )
-
+    
+    def get_all_letters(self) -> list[Letter]:
+        cursor = self.__connection.cursor()
+        raw_letters = cursor.execute("""SELECT * FROM Letters""").fetchall()
+        letters = [Letter(id=letter_id, name=name, text=text) for (letter_id, name, text) in raw_letters]
+        return letters

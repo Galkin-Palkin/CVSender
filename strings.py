@@ -1,3 +1,5 @@
+from aiogram.utils.markdown import hcode, hpre
+
 MAIN_MENU = "Привет! Я бот для отправки резюме по электронной почте. Просто отправьте мне свое резюме в виде файла, и я отправлю его на указанный адрес."
 
 def DOCUMENT_DOWNLOADED_SUCCESSFULLY(filename: str):
@@ -16,7 +18,7 @@ UNSUPPORTED_FILE_EXTENSION = "Данный формат файлов не под
 LETTERS_MENU = "Выберите шаблон письма или создайте новый"
 
 def CERTAIN_LETTER_MENU(letter: str):
-    return f"Текущий шаблон письма:\n{letter}\nВыберите действия:"
+    return f"Текущий шаблон письма:\n{hpre(letter)}\nВыберите действия:"
 
 EDIT_LETTER_PATTERN_BUTTON = "Изменить шаблон письма"
 
@@ -64,3 +66,15 @@ def FILE_SELECTED(filename: str) -> str:
 
 def FILE_NOT_SELECTED(filename: str) -> str:
     return filename
+
+CREATE_NEW_LETTER_BUTTON = "Создать шаблон письма"
+
+LETTER_NAME_MESSAGE = "Введите название шаблона письма:"
+
+LETTER_TEXT_MESSAGE = "Введите текст шаблона письма:"
+
+LETTER_CREATED_SUCCESSFULLY = "Шаблон письма успешно создан!"
+
+EDIT_LETTER_NAME_MESSAGE = "Введите новое название шаблона письма:"
+
+EDIT_LETTER_NAME_BUTTON = "Изменить название шаблона письма"

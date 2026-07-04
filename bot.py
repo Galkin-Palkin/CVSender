@@ -46,7 +46,10 @@ async def main():
         )
     )
     dp.message.outer_middleware(FileMiddleware(allowed_mime_types=ALLOWED_MIME_TYPES))
-    await dp.start_polling(bot)
+    try:
+        await dp.start_polling(bot)
+    finally:
+        database.close()
 
 if __name__ == "__main__":
     asyncio.run(main())

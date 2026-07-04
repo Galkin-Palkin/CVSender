@@ -6,7 +6,7 @@ from keyboards.files_keyboard import files_keyboard
 from keyboards.email_send_keyboard import email_send_keyboard
 from database.dummy_data import files
 from strings import EDIT_FILES_MENU, EMAIL_SEND_MENU
-from utils.id_helper import IdHelper
+from utils.id_helper import StateHelper
 
 
 router = Router()
@@ -24,13 +24,13 @@ async def edit_files(callback: CallbackQuery):
     
 @router.callback_query(F.data.startswith(CallbackData.file_selected_prefix))
 async def file_selected(callback: CallbackQuery):
-    file_id = IdHelper.extract_id(callback_data=callback.data)
+    file_id = StateHelper.extract_id(callback_data=callback.data)
     #TODO добавить обработку нажатия на кнопку
     await callback.answer()
     
 @router.callback_query(F.data.startswith(CallbackData.file_unselected_prefix))
 async def file_unselected(callback: CallbackQuery):
-    file_id = IdHelper.extract_id(callback_data=callback.data)
+    file_id = StateHelper.extract_id(callback_data=callback.data)
     #TODO добавить обработку нажатия на кнопку
     await callback.answer()
     

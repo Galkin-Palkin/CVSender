@@ -5,3 +5,11 @@ class LetterEdit(StatesGroup):
 
 class TitleEdit(StatesGroup):
     state = State()
+
+class CreateNewLetter(StatesGroup):
+    name_input = State()
+    letter_text_input = State()
+
+class LetterNameEdit(StatesGroup):
+    state = State()
+    
